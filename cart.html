@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/product.css"> -->
+    <link rel="stylesheet" href="css/cart_stylesheet.css">
+    <link rel="stylesheet" href="css/shared_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Cart</title>
+</head>
+<body>
+    <header>
+        <div id="logo_box">
+            <img src="image/logo2.png" alt="logo">
+        </div> 
+        <div id="user_info">
+            <span id="usernameDisplay"></span>
+            <div id="cart-info" class="dropdown">
+                <a href="#"  id="cartDropdown">
+                    <i class="fas fa-shopping-cart"></i><span id="cartCount">0</span>
+                </a>
+                <div id="cartDropdownMenu" class="dropdown-menu cart-dropdown">
+                    <div id="cartDropdownItems"> </div>
+                    <div class="dropdown-divider"> </div>
+                    <a class="dropdown-item" href="cart.html">View All Products</a>
+                </div>
+            </div>
+            <button onclick="logout()" id="logout_btn">Logout</button>
+        </div>
+    </header>
+    <div id="cart_items">
+    </div>
+    <div>
+        <h3 id="price"> Total Price: <span id="totalPrice">0</span> $</h3>
+    </div>
+    <hr>
+    <div id="fav_box">
+        <h3 id="favorite-title">Favorite Items</h3>
+        <div id="favorite-items" class="favorite-items-container">      
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            loadCartAndFavorites();
+            renderCartItems();
+            renderFavoriteItems();
+            updateCartDropdown();
+            const cartIcon = document.querySelector('.fas.fa-shopping-cart');
+            cartIcon.addEventListener('click', toggleCartDropdown);
+        }
+    </script>
+    <!-- <script src="scripts/product.js"></script> -->
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>
